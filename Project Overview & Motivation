@@ -1,0 +1,10 @@
+Project Overview
+This project focuses on animal species classification using a Convolutional Autoencoder (CAE) on the AFHQ-512 dataset. The objective is to classify images into three categories—cat, dog, and wild animals—by leveraging unsupervised feature learning followed by supervised classification.
+Instead of directly training a deep CNN classifier, this work explores how unsupervised representation learning can extract meaningful latent features that improve generalization and reduce overfitting, especially when class labels are limited.
+
+Motivation
+Traditional CNN classifiers rely entirely on labeled data and may overfit when trained on visually diverse datasets such as wildlife images. To address this challenge, a Convolutional Autoencoder (CAE) is used to:
+Learn compact and informative latent representations
+Reduce dependence on labels during feature extraction
+Improve classification performance through pretraining
+This approach aligns well with real-world wildlife and veterinary applications, where labeled data is often scarce but raw images are abundant.
