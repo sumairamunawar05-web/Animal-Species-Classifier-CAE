@@ -1,0 +1,34 @@
+Parameter 	Value
+Image Size:	128 × 128
+Batch Size:	32
+Latent Dimension:	256
+Optimizer:	Adam
+Learning Rate:	0.001
+Loss (CAE):	Mean Squared Error
+Epochs:	100
+Random Seed	42
+
+Why Image Size = 128:
+
+Original images are 512×512
+Downscaling reduces:
+GPU memory usage
+Training time
+128×128 retains sufficient spatial detail
+Enables faster experimentation without major performance loss
+Ideal trade-off between accuracy and efficiency
+
+Why Latent Dimension = 256:
+
+Small enough to enforce meaningful compression
+Large enough to preserve semantic features
+Prevents trivial identity mapping
+Empirically found to balance reconstruction quality and classification accuracy
+
+Training Decisions Explained:
+
+Unsupervised pretraining used to learn generic features
+Deterministic operations enabled for reproducibility
+Batch normalization stabilizes convergence
+Feature extraction frozen during classifier training
+Separate datasets for CAE and classifier ensure clean evaluation
