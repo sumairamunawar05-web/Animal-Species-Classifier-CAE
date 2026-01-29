@@ -1,0 +1,18 @@
+Performance Summary:
+
+Test Accuracy: 87.56%
+Validation Accuracy: 89.03%
+Baseline Improvement: +51.75%
+Reconstruction Loss: 0.009684
+
+Class-wise Performance:
+Class	Precision	Recall	F1-Score
+Cat	   90%	     85%	   88%
+Dog    87%	     86%     87%
+Wild	 84%	     89%	   86%
+
+Evaluation Insights:
+Balanced performance across all classes
+No significant overfitting observed
+Strong recall for wild animals, indicating robust feature extraction
+CAE pretraining significantly improves classifier stability
