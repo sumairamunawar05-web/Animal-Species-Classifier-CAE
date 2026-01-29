@@ -1,0 +1,43 @@
+Pipeline:
+AFHQ-512 Images
+      ↓
+Image Preprocessing (Resize 512 → 128, Normalize)
+      ↓
+Train Convolutional Autoencoder (Unsupervised)
+      ↓
+Extract Latent Features (Encoder Output)
+      ↓
+Train DNN Classifier (Supervised)
+      ↓
+Evaluation & Visualization
+
+
+Data Preparation:
+
+Dataset: AFHQ-512
+Classes: cat, dog, wild
+Images resized to 128×128
+Normalized to [0,1]
+Train / Validation / Test split with fixed random seed for reproducibility
+
+CAE Architecture
+The autoencoder consists of a 4-layer convolutional encoder and decoder:
+
+Encoder
+Convolutional blocks with increasing depth
+Batch Normalization for stable training
+MaxPooling for spatial compression
+Output: 256-dimensional latent vector
+
+Decoder
+Symmetric architecture to encoder
+Upsampling layers to reconstruct images
+Final sigmoid activation for pixel reconstruction
+The CAE is trained using Mean Squared Error (MSE) loss.
+
+Classifier Architecture:
+Input: Extracted latent features from encoder
+Fully Connected DNN with 4 layers
+ReLU activations
+
+Softmax output for 3-class classification
